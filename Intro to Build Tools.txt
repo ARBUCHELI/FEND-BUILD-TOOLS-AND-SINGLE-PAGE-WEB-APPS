@@ -85,7 +85,83 @@
 
 ==================================================================================================================================================================
 
+2. Setting the Stage
+--------------------
+	In this section we are going to talk about why we need build tools for front end projects.
 
+	Go to the Udacity website and inspect element to look at all of the assets on the Udacity home page.
+
+	Pro tip: Don't just open inspector and go to the head tag element to see what's there. One of my favorite browser dev tools is the Network tab. Go there and you can look at all 
+	the requests made by the page, separate them by type, see the http request responsible, see the response, etc.. I could do an entire course just on this tab probably. You can 
+	learn a ton by taking a look at sites this way and it is a priceless debugging tool.
+
+	On your own
+	-----------
+	More practice examples.
+		. Go to two websites you visit often or like.
+		. Inspect their dependency lists just like we did Udacity's website earlier.
+		. Take note of any trends, questions, or observations you have while inspecting each.
+
+	Questions
+	---------
+	What are some of your observations and takeaways from looking at Udacity and the other website assets?
+
+	Your reflection
+	---------------
+	I see that in professional web apps, there are a lot of different types of files and assets bundled together and I see that the professional websites make a lot of requests to 
+	different servers at a time in order to show to the user the information in the browser.
+
+	Quiz Question
+	--------------
+	Asw/ When loading website styles the order in which each css file is loaded matters
+
+	Interview Question
+	------------------
+	If a client is complaining that their website load time is too slow, what things would you do to assess where the slowdown is occurring and what might fix the issue?
+
+	Your reflection
+	---------------
+	It depends of different factors such as the Front-End framework used to create the web app, and other factors. The first thing I would do, could be opening in Google Chrome the 
+	web development tools and check wich component is delaying the app, for example if the app was created using React. Another thing I can do could be, checking the Network tab to 
+	check if there is something wrong with the reply from the servers.
+
+	Things to think about
+	---------------------
+	Some good points you would want to hit if asked this question: Use the network tab to look at the overall size of the webpage and if any assets are too big Look at what third 
+	party scripts are loading and when Try Google lighthouse audits (if you haven’t heard of it, look it up you’ll love it)
+
+==================================================================================================================================================================
+
+3. Intro To Build Tools
+-----------------------
+	In this section we are going to talk about some general principles that all build tools have in common, and then introduce how Webpack fits into that role.
+
+	BUILD TOOLS allow developers to AUTOMATE their process for handling WEBSITE ASSETS, saving them lots of time and headache.
+
+	SOME COMMON BUILD TOOLS:
+	-----------------------
+		. npm.
+		. GRUNT --> JS Task Runner.
+		. BOWER.
+		. YEOMAN.
+		. GULP.
+		. BRUNCH.
+		. WEBPACK --> MODULE BUNDLER. --> Used in React and View.
+
+	Webpack
+ 	---------> Inside of the create react app build tool.
+
+	Webpack and Other Build Tools
+	-----------------------------
+		. Webpack is becoming the ubiquitous buid tool
+		. Grunt and Gulp are other common options
+		. Reasons for learning Webpack are:
+			. It is becoming more and more common in professional web development.
+			. If you learn it, any other build tool you go to learn will be easy in comparison.
+
+	
+
+	
 
 	
 
