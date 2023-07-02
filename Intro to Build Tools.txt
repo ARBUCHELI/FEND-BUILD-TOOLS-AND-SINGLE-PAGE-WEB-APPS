@@ -141,10 +141,10 @@
 	SOME COMMON BUILD TOOLS:
 	-----------------------
 		. npm.
-		. GRUNT --> JS Task Runner.
+		. GRUNT --> JS Task Runner. --> This is very important and useful to study it.
 		. BOWER.
 		. YEOMAN.
-		. GULP.
+		. GULP. --> This is very important and useful to study it.
 		. BRUNCH.
 		. WEBPACK --> MODULE BUNDLER. --> Used in React and View.
 
@@ -158,6 +158,95 @@
 		. Reasons for learning Webpack are:
 			. It is becoming more and more common in professional web development.
 			. If you learn it, any other build tool you go to learn will be easy in comparison.
+
+	Build tools will manage all our assets so that we don’t have to by combining them all into a single file (or sometimes a few files). We create a set of rules for the build tool to 
+	follow, telling it specifically how we want each type of asset handled, and then it follows our rules, takes all the assets and bundles them into a single large file, which has 
+	everything loading in the correct order and is much easier for us to deal with. Typically, files with names like bundle or main are the result of a build tool combining many 
+	assets into one.
+
+	What does it look like to write these rules for a build tool? Rules are written into config files. Just to give you a glimpse of where we’re headed, here is an example webpack 
+	config file. Don’t worry, this should look like gibberish right now, but we’re just going to take a look at a few things.
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: 'main.js',
+  },
+  module: {
+       rules: [
+          {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "babel-loader",
+          },
+          {
+                test: /\.html$/,
+                use: [{ loader: "html-loader"}],
+                },
+                {
+                    test: /\.scss$/,
+                    use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+                }
+       ]
+ },
+  plugins: [
+    new HtmlWebPackPlugin({
+           template: "./src/html/index.html",
+           filename: "./index.html",
+    })
+  ]
+}
+
+	One thing to notice is that we’re in javascript land! You can see that this config file is 100% normal javascript. Webpack is entirely built with js.
+
+	You can also see a whole section here in the middle titled “rules”. Not surprisingly, this is where we declare the rules that will govern our different assets. You might also have 
+	noticed that each rule targets a certain type of file with regex.	
+
+	Activity
+	--------
+	A developer’s best friend is their search engine! Take some time to do this quick search and see what you find.
+		- Do a quick google search (not more than 10 minutes) for front end build tools.
+		- Note what names you see, or other facts that stand out.
+
+	Quiz Question
+	-------------
+	What kinds of assets might care which order they are loaded in?
+
+	Asw/ 
+	. Styles
+	. Images
+	. JavaScript
+	. Third party libraries
+
+	Quiz Question
+	-------------
+	Build Tools are a category of front end development technology that:
+
+	Asw/
+	Help developers write their asset management requirements intro programmatic rules that can be run on command to save time and effort.
+
+	Quiz Question
+	-------------
+	So far, we know that Webpack is:
+
+	Asw/ A JavaScript tool for better assest management.
+
+	Interview Question
+	------------------
+	Explain what role build tools play in modern frontend development.
+
+	Your reflection
+	---------------
+	Build tools are software creted to manage the order in which the files, the libraries, packages and other dependencies should be loaded in order to make an App run efficiently.
+
+==================================================================================================================================================================
+
+* Conclusion
+------------
+	To get a wider view of all the options in the build tool world, this is a good compare/contrast article to give you the lay of the land, though it was written a few years ago and 
+	not all of the details are correct for current versions, the technologies listed there representative of what is out there, though webpack would probably be at the top of that 
+	list if it had been written today.
 
 	
 
